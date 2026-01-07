@@ -22,15 +22,18 @@ Install the required libraries (recommended inside a virtual environment):
 
 1️⃣ Start the Server
 The server temporarily listens at http://127.0.0.1:8000/upload: 
+
  🔹 python -m uvicorn main:app --reload
 
 2️⃣ Start the Client (Monitor)
 The client performs an initial scan of the folder and then starts listening for changes: 
+
  🔹 python client/cli.py run "C:\path\to\your\folder"
 
 🧪 Running Tests
 The project uses pytest for testing.
 To run all tests: 
+
  🔹 python -m pytest -q
 
 🛠️ Key Features
