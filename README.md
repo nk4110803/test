@@ -1,40 +1,45 @@
-"# Asset Catalog Project" 
+# Asset Catalog Project
 
-📁 File Sync Service
-מערכת חכמה לסנכרון קבצים אוטומטי המנטרת תיקייה מקומית ומעלה שינויים לשרת בזמן אמת.
+📁 **File Sync Service**  
+An intelligent system for automatic file synchronization that monitors a local folder and uploads changes to a server in real-time.
 
-🏗️ מבנה הפרויקט
-client/: הלקוח המנטר את התיקייה ושולח קבצים.
+---
 
-server/: שרת היעד המקבל ושומר את הקבצים.
+🏗️ **Project Structure**
 
-tests/: בדיקות אוטומטיות ליחידות הקוד השונות.
+- **client/**: The client monitors the folder and sends files to the server.  
+- **server/**: The target server that receives and stores files.  
+- **tests/**: Automated tests for various units of the project.  
 
-⚙️ התקנה
-יש להתקין את הספריות הנדרשות (מומלץ בתוך סביבה וירטואלית):
+---
+
+⚙️ **Installation**  
+Install the required libraries (recommended inside a virtual environment):
 
 pip install -r client/requirements.txt
-🚀 הוראות הרצה
-1. הפעלת השרת
-השרת מאזין זמנית בכתובת http://127.0.0.1:8000/upload:
 
- python -m uvicorn main:app --reload
+🚀 Running the Project
 
- 2. הפעלת הלקוח (Monitor)
-הלקוח יבצע סריקה ראשונית של התיקייה ולאחר מכן יתחיל להאזין לשינויים:
+1️⃣ Start the Server
+The server temporarily listens at http://127.0.0.1:8000/upload:
+
+python -m uvicorn main:app --reload
+
+2️⃣ Start the Client (Monitor)
+The client performs an initial scan of the folder and then starts listening for changes:
 
 python client/cli.py run "C:\path\to\your\folder"
 
-🧪 הרצת בדיקות (Tests)
-המערכת משתמשת ב-pytest לצורך הרצת בדיקות.
+🧪 Running Tests
+The project uses pytest for testing.
+To run all tests:
 
-להרצת כל הבדיקות בפרויקט:
+python -m pytest -q
 
- python -m pytest -q
+🛠️ Key Features
 
-🛠️ תכונות מפתח
-Initial Scan: המערכת סורקת את התיקייה בכל הפעלה ומעלה קבצים שהשתנו בזמן שהייתה כבויה.
+Initial Scan: Scans the folder on every start and uploads files that changed while the system was offline.
 
-Hash Validation: שימוש ב-SHA-256 כדי לוודא שרק קבצים שבאמת השתנו יועלו.
+Hash Validation: Uses SHA-256 to ensure only truly changed files are uploaded.
 
-Clean Repo: שימוש ב-.gitignore מובנה למניעת העלאת קבצי זבל כמו __pycache__.
+Clean Repo: Built-in .gitignore to prevent uploading junk files like __pycache__.
