@@ -1,11 +1,13 @@
-# 📁 File Sync Service
----
+# Asset Catalog Project
+
+## 📁 File Sync Service
+
 An intelligent system for automatic file synchronization that monitors a local folder and uploads changes to a server in real-time.
 
 ---
 
 ## 🏗️ Project Structure
----
+
 - **client/**: The client monitors the folder and sends files to the server.  
 - **server/**: The target server that receives and stores files.  
 - **tests/**: Automated tests for various units of the project.  
@@ -13,7 +15,7 @@ An intelligent system for automatic file synchronization that monitors a local f
 ---
 
 ## ⚙️ Installation
----
+
 Install the required libraries (recommended inside a virtual environment):
 
 🔹 `pip install -r client/requirements.txt`
