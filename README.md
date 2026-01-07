@@ -29,7 +29,7 @@ The server temporarily listens at `http://127.0.0.1:8000/upload`:
 
 🔹 `python -m uvicorn main:app --reload`
 
----
+
 
 ### 2️⃣ Start the Client (Monitor)
 The client performs an initial scan of the folder and then starts listening for changes:
